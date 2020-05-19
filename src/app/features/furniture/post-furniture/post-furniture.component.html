@@ -1,0 +1,140 @@
+
+    <div *ngIf="name">
+            <div class="hero-image">
+                <div class="text-white" >
+                    <h5 class="card-header" style="background-color:#333;"><b>Sell My Furniture</b></h5>
+                </div>
+                <div class="card-body"  >
+
+                    <form  [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="form-group col-5 marg" >
+                                <label><b>Type Of Furniture</b></label>
+                                <!-- <input type="text" placeholder="Enter Type Of Furniture"  formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }"/> -->
+
+                                <select name = "dropdown"  required formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                                  <option value="">Select Type Of Furniture</option>
+                                  <option value = "Sofa" >Sofa</option>
+                                  <option value = "Bed">Bed</option>
+                                  <option value = "Table">Table</option>
+                                  <option value = "Chair">Chair</option>
+                                  <option value = "Armoire">Armoire</option>
+                                  <option value = "Dining Set">Dining Set</option>
+                                  <option value = "Book Case">Book Case</option>
+                                  <option value = "Wardrobe">Wardrobe</option>
+                                  <option value = "TV Cupboard ">TV Cupboard </option>
+                                  <option value = "TV Stand">TV Stand</option>
+                                  <option value = "Recliners">Recliners</option>
+
+                               </select>
+
+                                <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                                    <div *ngIf="f.type.errors.required">Type of Furniture Required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-5 adjust">
+                                    <label><b>Name Of Furniture</b></label>
+                                    <input type="text" placeholder="Enter Name Of Furniture" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                                    />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">Name of Furniture Required</div>
+                                    </div>
+                                </div>
+                            <div class="form-group col-5 marg" >
+                                <label><b>Price Of Furniture</b></label>
+                                <input type="number"   min="0"  oninput="this.value = Math.abs(this.value)"  formControlName="price" class="form-control" placeholder="Enter Price Of Furniture" [ngClass]="{ 'is-invalid': submitted && f.price.errors }"
+                                />
+                                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                                    <div *ngIf="f.price.errors.required">Price of Furniture Required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-5 adjust">
+                                    <label><b>Material Of Furniture</b></label>
+                                    <select name = "dropdown"  required formControlName="material" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.material.errors }">
+                                      <option value="">Select Material Of Furniture</option>
+                                      <option value = "Plastic" >Plastic</option>
+                                      <option value = "Wooden">Wooden</option>
+                                      <option value = "Metal">Metal</option>
+                                      <option value = "Engineered Wood">Engineered Wood</option>
+                                      <option value = "Leather">Leather</option>
+                                      <option value = "Fibre">Fibre</option>
+                                      <option value = "Microfiber">Microfiber</option>
+                                      <option value = "Fabric">Fabric</option>
+                                      <option value = "Laminate">Laminate</option>
+                                      <option value = "Steal">Steal</option>
+                                      <option value = "Solid Wood">Solid Wood</option>
+
+                                   </select>
+                                    <div *ngIf="submitted && f.material.errors" class="invalid-feedback">
+                                        <div *ngIf="f.material.errors.required">Material of Furniture Required</div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-5 marg" >
+                                    <label><b>Quantity Of Furniture</b></label>
+                                    <input type="number"  min="0"  oninput="this.value = Math.abs(this.value)"  id="quantity"  placeholder="Enter Quantity Of Furniture" formControlName="quantity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"
+                                    />
+                                    <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                                        <div *ngIf="f.quantity.errors.required">Quantity of Furniture Required</div>
+                                    </div>
+                            </div>
+                            <div class="form-group col-5 adjust">
+                                    <label><b>Image Of Furniture</b></label>
+
+                                    <input type="file" id="file" formControlName="file" multiple="multiple" class="form-control" (change)="selectFile($event)"
+                                        [ngClass]="{ 'is-invalid': submitted && f.file.errors }" />
+                                    <div class="text-center">
+                                        <div *ngIf="submitted && f.file.errors" class="invalid-feedback">
+                                            <div *ngIf="f.file.errors.required">At Least One File Required</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-5 marg" >
+                                            <label><b>Description Of Furniture</b></label>
+                                            <textarea rows="3" cols="10" placeholder="Enter Description Of Furniture"formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                                            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                                <div *ngIf="f.description.errors.required">Description of Furniture Required</div>
+                                            </div>
+                                        </div>
+
+                            <div *ngIf="Paid" class="form-group col-5 adjust">
+                                    <label for="shipping_charge"><b>Shipping Charge</b></label>
+                                    <input id="shipping_charge" type="text" formControlName="shipping_charge" placeholder="Enter shipping charge" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.shipping_charge.errors }" name="shipping_charge" required>
+                                </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+                                <div class="form-group col-5 marg" >
+
+                                <label><b>Shipping Of Furniture</b></label>
+                                <div>
+                                    <input id="free" type="radio" autocomplete="off" (click)="check($event)" value="free" name="shipping" formControlName="shipping">
+                                    <label for="free">Free</label>
+                                </div>
+                                <div>
+                                    <input id="paid" type="radio" autocomplete="off" (click)="check($event)" value="paid" name="shipping" formControlName="shipping">
+                                    <label for="paid">Paid</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="text-center">
+                        <button class="btn btn-dark" style="margin-right:10px;">Add Furniture</button>
+                        <button class="btn btn-dark" style="width:110px" type="reset" (click)="onReset()">Cancel</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+   

@@ -1,0 +1,136 @@
+.col{
+    align-content: center;
+    // padding-top: 115%;
+    background-color:white;
+    margin-top: 60px;
+
+}
+.secondclass{
+    align-self: auto;
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 30%;
+    padding-bottom: 10%;
+}
+.form-address{
+    background-color:whitesmoke;
+}
+.add{
+    text-align:center;
+}
+// .form-group{
+//     border: 3px rgba(0, 0, 0, 0.60) groove;
+//     border-radius: 8px;
+// }
+.btn{
+    background-color: rgba(0, 0, 0, 0.57);
+    border-color: rgba(0, 0, 0, 0.00);
+
+}
+.container{
+    border: 1px black solid;
+    border-spacing: 5%;
+}
+.add h3{
+
+    color:rgba(0, 0, 0, 0.57);
+
+}
+@media (min-width: 330px)and (max-width: 600px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 150px;
+        margin-left: 40%;
+width: 1500px;
+
+    }
+    .secondclass{
+        width: 600px;
+    }
+    .container{
+
+        width: 460px;
+}
+}
+
+
+@media (width: 320px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 150px;
+        // margin-left: 10%;
+        width: 1200px;
+
+    }
+    .secondclass{
+        width: 290px;
+    }
+    .container{
+
+        width: 250px;
+}
+}
+@media (min-width: 601px)and(max-width:767px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 150px;
+
+    }
+}
+@media (width: 1024px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 100px;
+
+    }
+}
+// @media (width: 768px){
+//     .col{
+//         align-content: center;
+//         // padding-top: 115%;
+//         background-color:white;
+//         margin-top: 300px;
+
+
+//     }
+// }
+@media (min-width: 768px)and (max-width:1023px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 250px;
+
+
+    }
+}
+
+@media(min-width: 1025px )and (max-width: 1039px){
+    .col{
+        align-content: center;
+        // padding-top: 115%;
+        background-color:white;
+        margin-top: 100px;
+
+    }
+}
+
+//     @media (min-width: 600px max-width: 500px){
+//         .col{
+//             align-content: center;
+//             // padding-top: 115%;
+//             background-color:white;
+//             margin-top: 350px;
+
+//         }
+
+
+// }

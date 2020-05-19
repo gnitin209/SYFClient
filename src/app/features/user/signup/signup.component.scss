@@ -1,0 +1,55 @@
+
+
+.btn-google {
+  
+    color: white;
+    background-color: #ea4335;
+    width:150;
+
+     }
+    .btn-facebook {
+    color: white;
+    background-color: #3b5998;
+    width:160
+     }
+     @media only screen and (min-width: 768px) {
+       /* For desktop: */
+       .col-1 {width: 8.33%;}
+       .col-2 {width: 16.66%;}
+       .col-3 {width: 25%;}
+       .col-4 {width: 33.33%;}
+       .col-5 {width: 41.66%;}
+       .col-6 {width: 50%;}
+       .col-7 {width: 58.33%;}
+       .col-8 {width: 66.66%;}
+       .col-9 {width: 75%;}
+       .col-10 {width: 83.33%;}
+       .col-11 {width: 91.66%;}
+       .col-12 {width: 100%;}
+     }
+     
+@media only screen and (max-width: 450px) {
+  /* For mobile phones: */
+  
+
+.btn-google {
+  margin-left: 73px;
+     }
+    .btn-facebook {
+
+      margin-left: 73px;
+      
+     }
+  .btn{
+    margin-left: 37px;
+  }
+  .leftcontent{   border-right: 1px;   border-image: linear-gradient(white) 10 stretch; }
+}
+  .card-header{   text-align:center; } 
+  .leftcontent{   border-right: 1px solid transparent;   border-image: linear-gradient(white,black,white) 10 stretch; } .span2{   width: 100px !important; }
+  
+  .card-body{
+    padding: 30px;
+  }
+  
+  

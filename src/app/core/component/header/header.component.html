@@ -1,0 +1,84 @@
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark fixed-nav-bar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h3 style="margin-top:1px"><b>Sell Your Furniture</b></h3>
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item pointer">
+                    <a class="nav-link" (click)="post()">Add Furniture <span class="sr-only">(current)</span></a>
+
+                </li>
+
+
+                <li class="nav-item pointer">
+                    <a class="nav-link" (click)="get()">Order History <span class="sr-only">(current)</span></a>
+
+                </li>
+
+
+
+            </ul>
+
+            <div>
+                <form class="form-inline my-5 my-lg-2">
+                    <input [formControl]="search" class="form-control " type="search" placeholder="Search" aria-label="Search">
+                    <button routerLink="/search" (click)="onEnter()" class="btn btn-dark btn1 " type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+
+        <ul *ngIf="l" class="navbar-nav ">
+
+            <li>
+                <h4 style="color:white;margin-top:10px;margin-right:10px">Hi {{userName | titlecase}} </h4>
+            </li>
+        </ul>
+
+        <li>
+            <button (click)="cart()" class="btn"><i class="fas fa-shopping-cart"><span class="badge badge-light" *ngIf="sizeCart>0">{{sizeCart}}</span></i></button>
+        </li>
+
+        <ul *ngIf="l" class="navbar-nav ">
+
+            <li>
+                <!-- <a  (click)="signOut()"  routerLink="/home"><span class="glyphicon glyphicon-user" style="color:white;"></span>Sign Out</a> -->
+                <button class="btn btn-pill btn-dark" routerLink="/home" (click)="signOut()" class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit">Sign Out</button>
+
+            </li>
+
+        </ul>
+
+
+        <ul *ngIf="!l" class="navbar-nav ">
+            <!-- <li>
+                  <a href="#" routerLink="/signup"><span class="glyphicon glyphicon-user" style="color:white;"></span> Sign Up</a>
+                <button routerLink="/signup" class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+
+            </li> -->
+            <li>
+                <!-- <a href="#" routerLink="/login"><span class="glyphicon glyphicon-log-in" style="color:white;"></span> Sign In</a> -->
+                <!-- <button routerLink="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In/Sign Up</button> -->
+                <button type="button" routerLink="/login" class="btn btn-pill btn-dark">SignIn/SignUp</button>
+
+            </li>
+        </ul>
+        <!-- <ul> -->
+
+        <!-- </ul> -->
+
+    </div>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

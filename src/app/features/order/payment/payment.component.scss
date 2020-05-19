@@ -1,0 +1,225 @@
+.monospace {
+
+        font-family: Impact, Charcoal, sans-serif;
+      }
+      .body
+      {
+        padding-top: 10%;
+        padding-bottom: 10%;
+
+      }
+      .b{
+        background-color: whitesmoke
+
+      }
+      .container
+      {
+       margin-top: 30px;
+        border: 1px solid black;
+          background-color: whitesmoke
+
+      }
+
+      .vl {
+        border-left: 2px solid black;
+        height: 200px;
+      }
+      #table
+      {
+        float: left;
+      }
+      .btn
+      {
+        background-color: black;
+        text-decoration-color: white;
+      }
+     .main
+      {
+        width: 100%;
+        vertical-align: top;
+      }
+      .bt{
+        background-color: black;
+        border-color: black;
+        width: 100%;
+      }
+
+      .f
+      {
+        *display: inline-block;
+        width: 50%;
+      }
+  .s
+      {
+        *display: inline-block;
+        width: 100%;
+      }
+      .sel
+      {
+        height: 28px;
+       border-color: rgba(0, 0, 0, 0.14);
+
+      }
+      #o{
+
+        margin-left: 400px;
+      }
+      .conta{
+        margin-top: -80px;
+
+// .floatleft
+// {
+//   width: 40px; 
+//   float:left;
+// }
+// .floatright
+// {
+//   width: 40px; 
+//   float:right;
+// }
+      }
+      #id{
+        height:40px;
+      }
+      .ma{
+        margin-top: 80px;
+      }
+      @media (width: 320px){
+        .ma{
+            // align-content: center;
+            // padding-top: 115%;
+            background-color:white;
+            margin-top: 150px;
+          
+           
+        }
+        .conta{
+          align-self: center;
+          margin-top: 100px;
+        }
+        .row
+        {
+         margin-left: 4px;
+        }
+        
+       
+        }
+      @media (min-width: 350px)and(max-width: 765px){
+        .ma{
+            // align-content: center;
+            // padding-top: 115%;
+            background-color:white;
+            margin-top: 150px;
+          
+           
+        }
+        .conta{
+          align-self: center;
+          margin-top: 100px;
+        }
+        .row
+        {
+         margin-left: 180px;
+        }
+        
+       
+        }
+        @media(width:1024px){
+          .ma{
+            // align-content: center;
+            // padding-top: 115%;
+            background-color:white;
+            margin-top: 10px;
+           
+        }
+        .conta{
+          margin-top: 60px;
+        }
+        .row
+        {
+         margin-left: 240px;
+        }
+        
+       
+       }
+        @media(min-width:766px)and(max-width: 1001px){
+          .ma{
+            // align-content: center;
+            // padding-top: 115%;
+            background-color:white;
+            margin-top: 300px;
+           
+        }
+        .conta{
+          margin-top: 200px;
+         
+        }
+        .row
+        {
+         margin-left: 180px;
+        }
+       
+        }
+        @media(min-width:1002px)and (max-width:1039px){
+          .ma{
+            // align-content: center;
+            // padding-top: 115%;
+            background-color:white;
+            margin-top: 100px;
+           
+        }
+        .conta{
+          margin-top: 80px;
+        }
+      }
+      @media (max-width: 700px){
+        .container{
+         width: 1200px;
+        }
+      }
+      @media (width: 768px){
+        .container{
+          margin-top: 200px;
+        }
+      }
+
+      @media (width: 411px){
+       .container .floatleft
+        {
+          width: 400px; 
+          //float:left;
+        }
+        .container.floatright
+        {
+          width: 400px; 
+          ///float:left;
+        }
+           
+        }
+        @media(width:360px){
+          .container{
+          width:850px;
+          }
+        }
+        @media(width:375px){
+          .container{
+          width:870px;
+          }
+        }
+        @media(width:411px){
+          .container{
+          width:870px;
+          }
+        }
+        @media(width:600px){
+          .container{
+          width:2000px;
+          }
+        }
+      
+        //     margin-top: 150px;
+           
+        // }
+        // .conta{
+        //   margin-top: 80px;
+        // }}

@@ -1,0 +1,75 @@
+<!-- <div class="container">
+    <br>
+
+
+    <div class="wrapper row">
+    <div class="details col-3" *ngFor="let f of furniture">
+
+    <div class="card">
+    <div class="card-body  d-flex flex-column">
+    <img [src]="'data:image/jpeg;base64,' + f.imageContent"class="card-img-top"><br>
+
+    <h4 class="card-title">{{f.furnitureType}}</h4>
+    <p class="card-text">{{f.furniturePrice | currency:'INR'}}
+    <br>
+
+    </div>
+    </div>
+
+    </div>
+    <br>
+    </div>
+    <br>
+    </div>  -->
+<div style="margin-top:70px;">
+  <div class="container" *ngIf="total>0; else elseBlock">
+
+    <div class="row">
+      <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+        <!-- Shopping cart table -->
+        <div class="table">
+          <table class="table">
+            <thead class="thead">
+              <tr>
+                <th scope="col" class="border-0 bg-dark">
+                  <div class="p-2 px-3 text-uppercase" style="color:white">Furniture</div>
+                </th>
+                <th scope="col" class="border-0 bg-dark">
+                  <div class="p-2 px-3 text-uppercase" style="color:white">Name</div>
+                </th>
+                <th scope="col" class="border-0 bg-dark">
+                  <div class="p-2 px-3 text-uppercase" style="color:white">Price</div>
+                </th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let f of furniture">
+                <th scope="row" class="border-0">
+                  <div class="p-2">
+                    <a class="nounderline" routerLink="/view" (click)="viewProduct($event,f.furnitureId)"><img id="thumbnail" width="100px" height="100px" [src]="'data:image/jpeg;base64,' + f.imageContent" alt="" class="img-fluid rounded shadow-sm">
+                              </a>
+                  </div>
+                </th>
+                <td class="border-0 align-middle"><strong>{{f.furnitureType1}}</strong></td>
+                <td class="border-0 align-middle"><strong>{{f.furniturePrice | currency:'INR'}}</strong></td>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-pulse-sync">
+    <p style="color: white">Please Wait. </p>
+  </ngx-spinner>
+
+  <ng-template #elseBlock>
+    <img id="errorPage" src="./../../../../assets/Capture.PNG" class="noResults" />
+  </ng-template>
+
+</div>

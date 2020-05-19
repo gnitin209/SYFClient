@@ -1,0 +1,228 @@
+<!-- <h4>
+    You can choose payment through card or cash on delivery.
+</h4> -->
+<div *ngIf="p" class="ma">
+    <div>
+        <p class="monospace">CHOOSE YOUR PAYMENT MODE</p>
+    </div>
+    <div>
+        <!-- //<button (click)="pay()">COD</button> -->
+        <input type="button" class="btn btn-info" (click)="payCod()" value="Cash on delivery(COD)">
+
+    </div>
+    <br>
+    <div>
+        <!-- // <input type="button" class="btn btn-info"  (click)=*ngIf="isvalid" value="Payment though Card "> -->
+        <input type="submit" class="btn btn-info" (click)="payByCard()" value="Payment though Card ">
+        <!-- // <button routerLink="/card">THROUGH CARD</button> -->
+    </div>
+</div>
+<hr>
+<div *ngIf="cash" class="body">
+
+    <div class="conta">
+        <div class="conta">
+            <div class="conta">
+                <h4 id="o">
+                    <!-- ORDER DETAILS -->
+                </h4>
+                <div class="row col-md-6 col-md-offset-2 custyle">
+                    <table class="table table-striped custab" id="table">
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let s of furniture">
+                                <td><img id="thumbnail" [src]="'data:image/jpeg;base64,' + s.furnitureDTO" alt="" class="img-fluid rounded shadow-sm"
+                                        style="height: 200px;width:fit-content"></td>
+                                <td><b>{{s.furnitureName}}</b></td>
+                                <td><b>{{s.furniturePrice | currency:'INR'}}</b></td>
+                                <td><b>{{s.furnitureQuanitity}}</b></td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+
+                                </td>
+
+                                <td>
+                                    <H4> Total</H4>
+                                </td>
+                                <td>
+                                    <h4>{{price | currency:'INR'}}</h4>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <input type="button" class="bt btn-info" (click)="payC()" value="CONFIRM">
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="payment" class="body">
+    <div class="container" >
+            <!-- style="width: 100% -->
+        <br>
+        <div class="floatleft"  style="width: 40%; float:left">
+             <!--> -->
+        <!-- > -->
+            <div class="col">
+                <div class="secondclass">
+                    <!-- <div class="container  bg-light w-100"> -->
+                    <div class="add">
+                        <h4>ORDER DETAILS</h4>
+                        <table class="table table custab" id="table">
+                            <thead>
+                                <tr>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let s of furniture">
+                                    <td><img id="thumbnail" [src]="'data:image/jpeg;base64,' + s.furnitureDTO" alt="" class="img-fluid rounded shadow-sm"></td>
+                                    <td><b> {{s.furnitureName}}</b></td>
+
+                                    <td><b>{{s.furniturePrice | currency:'INR'}}</b></td>
+                                    <td><b>{{s.furnitureQuanitity}}</b></td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+
+                                    <td>
+                                        <H4> Total</H4>
+                                    </td>
+                                    <td>
+                                        <h4>{{price | currency:'INR'}}</h4>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="floatright" style="width: 40%; float:right">
+            <!-- > -->
+            <!-- > -->
+            <div class="col">
+                <div class="secondclass">
+                    <!-- <div class="container  bg-light w-100"> -->
+                    <div class="add">
+                        <h4>
+                            CARD DETAILS
+                        </h4>
+                    </div>
+                    <div>
+                        <div style="width: 50%; height:10px; float:right">
+                            <img id="card" src="./../../../../assets/photos/cardm.png" alt="debit card" />
+                        </div>
+                        <div style="width: 50%; height:10px; float:right">
+                            <img id="card" src="./../../../../assets/photos/cardv.png" alt="debit card" />
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+
+                    <form [formGroup]="loginForm" class="form-address" (ngSubmit)="pay()">
+                        <div class="form-group">
+                            <br>
+                            <br>
+                            <input type="text" id="cardholdername" formControlName="cardholdername" class="form-control" placeholder="card holder name"
+                                [ngClass]="{ 'is-invalid': submitted && f.cardholdername.errors}">
+                            <div *ngIf="submitted && f.cardholdername.errors" class="invalid-feedback">
+                                <div *ngIf="f.cardholdername.errors.required">Card holder Name required</div>
+                                <div *ngIf="f.cardholdername.errors.pattern">card holder is not valid.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="cardnumber" formControlName="cardnumber" class="form-control" placeholder="card number" [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors}">
+                            <div *ngIf="submitted && f.cardnumber.errors" class="invalid-feedback">
+                                <div *ngIf="f.cardnumber.errors.required">Card Number is required</div>
+                                <div *ngIf="f.cardnumber.errors.pattern">Card Number is not valid.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="cvv" formControlName="cvv" class="form-control" placeholder="cvv" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors}">
+                            <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+                                <div *ngIf="f.cvv.errors.required">Cvv number is required</div>
+                                <div *ngIf="f.cvv.errors.pattern">Cvv number is not valid.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div style="width:40px; float:left">
+                                <select class="sel">
+                                      <option value="1">Jan</option>
+                                      <option value="2">Feb</option>
+                                      <option value="3">Mar</option>
+                                      <option value="4">Apr</option>
+                                      <option value="1">May</option>
+                                      <option value="2">jun</option>
+                                      <option value="3">Jul</option>
+                                      <option value="4">Aug</option>
+                                      <option value="1">Sep</option>
+                                      <option value="2">oct</option>
+                                      <option value="3">Nov</option>
+                                      <option value="4">dec</option>
+                                    </select>
+                            </div>
+                            <div style="width:40px; float:right;  margin-right:60%;">
+                                <select class="sel">
+                                            <option value="1">21</option>
+                                            <option value="2">22</option>
+                                            <option value="3">23</option>
+                                            <option value="4">24</option>
+                                            <option value="1">25</option>
+                                            <option value="2">26</option>
+                                            <option value="3">27</option>
+                                            <option value="4">28</option>
+                                            <option value="1">29</option>
+
+                                          </select>
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+
+                        <!-- <button class="btn btn-smmary btn-block text-uppercase"  type="submit">Submit</button> -->
+                        <input type="submit" class="bt btn-danger" widht="100px" type="submit" value="SUBMIT ">
+
+                        <br>
+                    </form>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+</div>
+<!-- </ng-template> -->
+<!-- </div> -->

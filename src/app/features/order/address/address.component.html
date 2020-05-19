@@ -1,0 +1,64 @@
+
+<div class="col" >
+
+    <div class="secondclass">
+        <div class="container  bg-light w-100">
+            <div class="add">
+                <h2>
+                    ADDRESS DETAILS
+                </h2>
+            </div>
+            <br>
+
+            <form [formGroup]="loginForm" class="form-address" (ngSubmit)="Add()">
+                <div class="form-group">
+
+                    <input type="text" id="street" formControlName="addressStreet" class="form-control" placeholder="Street " [ngClass]="{ 'is-invalid': submitted && f.addressStreet.errors}">     <div *ngIf="submitted && f.addressStreet.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressStreet.errors.required">street required</div>
+                            <div *ngIf="f.addressStreet.errors.pattern"> Street not valid.</div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <input type="text" id="city" formControlName="addressCity" class="form-control" required  placeholder="City" [ngClass]="{ 'is-invalid': submitted && f.addressCity.errors}">
+                    <div *ngIf="submitted && f.addressCity.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressCity.errors.required">City name required</div>
+                            <div *ngIf="f.addressCity.errors.pattern">City name not valid.</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="District" formControlName="addressDistrict" class="form-control" placeholder="District" [ngClass]="{ 'is-invalid': submitted && f.addressDistrict.errors}">
+                    <div *ngIf="submitted && f.addressDistrict.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressDistrict.errors.required">District required</div>
+                            <div *ngIf="f.addressDistrict.errors.pattern">District not valid.</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="State" formControlName="addressState" class="form-control" placeholder="State" [ngClass]="{ 'is-invalid': submitted && f.addressState.errors}">
+                    <div *ngIf="submitted && f.addressState.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressState.errors.required">State required</div>
+                            <div *ngIf="f.addressState.errors.pattern">State not valid.</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="pincode" formControlName="addressPincode" class="form-control" placeholder="Pincode" [ngClass]="{ 'is-invalid': submitted && f.addressPincode.errors}">
+                    <div *ngIf="submitted && f.addressPincode.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressPincode.errors.required">Pincode required</div>
+                            <div *ngIf="f.addressPincode.errors.pattern">Pincode not valid.</div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="Country" formControlName="addressCountry" class="form-control" placeholder="Country" [ngClass]="{ 'is-invalid': submitted && f.addressCountry.errors}">
+                    <div *ngIf="submitted && f.addressCountry.errors" class="invalid-feedback">
+                            <div *ngIf="f.addressCountry.errors.required">Country required</div>
+                            <div *ngIf="f.addressCountry.errors.pattern">Country not valid.</div>
+                </div>
+                </div>
+                <button class="btn btn-lg  btn-block text-uppercase btn-dark" style="background-color: black;color: white;" type="submit">Submit</button>
+
+            </form>
+            <br>
+
+
+        </div>
+    </div>
+</div>

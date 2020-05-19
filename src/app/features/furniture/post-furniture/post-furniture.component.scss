@@ -1,0 +1,62 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+.hero-image {
+  background-color: #cccccc;
+  height: 650px;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+ // background-size:100%;
+  position: relative;
+  margin-top:80px;
+}
+.btn:hover{
+  color: white;
+}
+.card-body{
+  align:center
+}
+.marg{
+  margin-left: 5%;
+}
+@media  (min-width: 360px) and (max-width: 640px)
+  {
+    .hero-image {
+      background-color: #cccccc;
+     // padding-bottom:90px;
+      height: 950px;
+      width:880px;
+     margin-left: -20px;
+ }
+ .col-5 {
+  flex: 100%;
+    max-width:90%;
+}
+.adjust{
+  margin-left:3%;
+}
+.marg{
+  margin-left: 3%;
+}
+.btn{
+margin-bottom: 10%;
+}
+}
+@media  (min-width: 768px) and (min-height: 1024px)
+  {
+    .hero-image {
+     margin-top:280px ;
+     margin-left: 70px;
+
+ }
+  }
+  @media  (min-width: 1024px) and (min-height: 1366px)
+
+{
+  .hero-image {
+    margin-top:150px ;
+    margin-left: 0px;
+
+}
+
+}

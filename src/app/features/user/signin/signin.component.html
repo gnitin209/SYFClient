@@ -1,0 +1,48 @@
+   <div style="margin-top:80px;" class="container  bg-light w-100">
+        <div class="card card-signin my-5">
+        <div class="card-header" style="background-color:black">
+                <h2 style="color:azure">
+               Sign In
+            </h2>
+            <p style="color:beige">
+                Log in our community. If you donot have an account then <a routerLink="/signup">Sign up</a>
+
+            </p>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="leftcontent">
+                    <div class="col">
+                            <font color="black">  Why be Old Fashioned? Join us with :</font>
+                            <br>
+                        <div class="span2">
+                              <br>
+                                    <button class="btn btn-sm btn-google btn-block text-uppercase" data-onsuccess="onSignIn" (click)="logInGmail() "><i class="fab fa-google mr-2"></i>Google</button>
+
+                                    <button class="btn btn-sm btn-facebook btn-block text-uppercase " data-onsuccess="onSignIn" (click)="logInFb()"><i class="fab fa-facebook-f mr-2"></i>Facebook</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <form [formGroup]="loginForm" class="form-signin" (ngSubmit)="login()">
+                            <font color="red">{{userLoginMessage}}</font>
+                            <br>
+                        <div class="form-group">
+
+                            <input type="email" id="inputEmail" formControlName="userEmail" class="form-control" placeholder="User Email " ngModel required>
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="password" id="inputPassword" formControlName="userPassword" class="form-control" placeholder="Password" ngModel
+                                required>
+                        </div>
+                        <!-- <button class="btn btn-xs btn-primary btn-block text-uppercase" type="submit">SIGN IN</button> -->
+                        <button class="btn btn-primary"  style="background-color:black;color:white;width:200px;font-weight:500;"  type="submit">SIGN IN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

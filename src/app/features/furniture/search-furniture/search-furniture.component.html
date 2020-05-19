@@ -1,0 +1,213 @@
+<br />
+<br/>
+<br/>
+<br/>
+<div style="margin-right: 5px;margin-left:5px;">
+
+  <div *ngIf="heading; else elseBlock">
+    <div class="row">
+
+      <aside class="card1">
+        <p style="color: black;"><b>Filters</b></p>
+        <div class="card" id="filters">
+          <article class="card-group-item">
+            <header class="card-header">
+              <div class="but1">
+                <button type="button" class="btn" style="color: white;background-color: black; " (click)="clear()">
+                Reset
+              </button>
+              </div>
+              <div>
+                <h6 class="title">Furniture Material</h6>
+              </div>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <form>
+                  <p style="color: black;">
+                    <input (change)="filters('wooden', $event)" #input type="checkbox" id=1 />Wooden
+                  </p>
+
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filters('plastic', $event)" type="checkbox" value="" id=2 #input />Plastic
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filters('fiber', $event)" type="checkbox" value="" #input id=3 />Fiber
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filters('fabric', $event)" type="checkbox" value="" #input id=4 />Fabric
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('engineered wood', $event)" type="checkbox" value="" #input id=5 />Engineed
+                    Wood
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('solid wood', $event)" type="checkbox" value="" #input id=6 />Solid Wood
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('leather', $event)" type="checkbox" value="" #input id=7 />Leather
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('laminate', $event)" type="checkbox" value="" #input id=8 />Laminate
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('steal', $event)" type="checkbox" value="" #input id=9 />Steal
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filters('microfiber', $event)" type="checkbox" value="" #input id=10 />Microfiber
+                  </p>
+                </form>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- card-group-item.// -->
+
+          <!-- card-group-item.// -->
+
+          <article class="card-group-item ">
+            <header class="card-header">
+              <h6 class="title">Furniture Type</h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <form>
+                  <p style="color: black;">
+                    <input (change)="filter1('sofa', $event)" type="checkbox" value="" id=1 #input />Sofa
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filter1('bed', $event)" type="checkbox" value="" #input id=2 />Bed
+                  </p>
+
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filter1('chair', $event)" type="checkbox" value="" #input id=3 />Chair
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filter1('dinning set', $event)" type="checkbox" value="" #input id=4 />Dinning Set
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('bookshelf', $event)" type="checkbox" value="" #input id=5 />Bookshelf
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('armoire', $event)" type="checkbox" value="" #input id=6 />Armoire
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('table', $event)" type="checkbox" value="" #input id=7 />Table
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('Book Case', $event)" type="checkbox" value="" #input id=8 />Book Case
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('recliners', $event)" type="checkbox" value="" #input id=9 />Recliners
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('tv cupboard', $event)" type="checkbox" value="" #input id=10 />TV Cupboard
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('tv stand', $event)" type="checkbox" value="" #input id=11 />TV Stand
+                  </p>
+                  <p style="color: black;">
+                    <input (change)="filter1('wardrobe', $event)" type="checkbox" value="" #input id=12 />Wardrobe
+                  </p>
+                </form>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <article class="card-group-item">
+            <header class="card-header">
+
+              <h6 class="title">Furniture Price</h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <form>
+
+                  <p style="color: black;">
+                    <input (change)="filterByPrice(500,1000, $event)" type="checkbox" value="" #input />500 - 1000
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filterByPrice(1000,5000, $event)" type="checkbox" value="" #input />1000 - 5000
+                  </p>
+
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input (change)="filterByPrice(5000,1000000,$event)" type="checkbox" value="" #input />5000 - More
+                  </p>
+
+                </form>
+              </div>
+
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <article class="card-group-item">
+            <header class="card-header">
+
+              <h6 class="title">Furniture Shipping</h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <form>
+
+                  <p style="color: black;">
+                    <input type="radio" id="shipping" value="free" #input (change)="filterByShipping($event)" name="shipping" />Free
+                  </p>
+                  <!-- form-check.// -->
+                  <p style="color: black;">
+                    <input id="shipping" type="radio" value="paid" (change)="filterByShipping($event)" name="shipping" #input />Paid
+                  </p>
+                </form>
+              </div>
+
+              <!-- card-body.// -->
+            </div>
+          </article>
+
+        </div>
+        <!-- card.// -->
+      </aside>
+      <!-- col.// -->
+
+      <aside class="col-sm-9" style="margin-top: 25px;">
+        <div class="wrapper row">
+          <div class="col-4" *ngFor="let f of heroesnew">
+            <a class="nounderline">
+
+              <div class="card cardDisplay">
+                <div class="card-body ">
+                  <img [src]="'data:image/jpeg;base64,' + f.imageContent" style="cursor: pointer" class="card-img-top" routerLink="/view" (click)="showProduct(f.furnitureId)"><br>
+                  <a class="nounderline" style="cursor: pointer" routerLink="/view" (click)="showProduct(f.furnitureId)">
+                    <h4 class="card-title">{{f.furnitureType}}</h4>
+                    <p class="card-text">{{f.furniturePrice | currency:'INR'}}</p>
+                  </a>
+                  <br>
+                  <button (click)="addToCart(f.furnitureId)" type="button" class="align-bottom btn btn-dark">Add to cart</button>
+
+                </div>
+              </div>
+            </a>
+          </div>
+          <br>
+        </div>
+        <!-- card.// -->
+      </aside>
+
+      <!-- col.// -->
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-pulse-sync">
+  <p style="color: white;">Please Wait.</p>
+</ngx-spinner>
+
+<ng-template #elseBlock>
+  <img src="./../../../../assets/NoResults.PNG" class="noResults" />
+</ng-template>
